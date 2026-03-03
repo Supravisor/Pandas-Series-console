@@ -1,4 +1,10 @@
 
+body {
+  background: #FFE873;
+  font-family: Arial;
+  padding-bottom: 6em;
+}
+
 h1 {
   font-family: Corbel;
   text-align: center;
