@@ -3,3 +3,38 @@ h1 {
   font-family: Corbel;
   text-align: center;
 }
+
+/* table */
+
+table {
+  margin: auto;
+}
+
+#buttons, #preview {
+  width: 38vw;
+  border: 3px solid black;
+}
+
+#buttons {
+  background: LightBlue;
+  padding: 10px;  
+}
+
+#preview {
+  height: 70vh;
+  border-radius: 7px;
+  background: rgb(150, 150, 150);
+}
+
+#textbox {
+  position: fixed;
+  padding-left: 5vw;
+}
+
+#empty {
+  width: 45vw;
+}
+
+td {
+  vertical-align: top;
+}
