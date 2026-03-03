@@ -30,3 +30,7 @@ table {
   position: fixed;
   padding-left: 5vw;
 }
+
+#empty {
+  width: 45vw;
+}
