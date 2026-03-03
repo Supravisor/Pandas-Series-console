@@ -9,3 +9,8 @@ h1 {
 table {
   margin: auto;
 }
+
+#buttons, #preview {
+  width: 38vw;
+  border: 3px solid black;
+}
