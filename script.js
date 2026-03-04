@@ -19,6 +19,8 @@ const series = () => {
 const createFromObject = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (value.value === "") {
     return alert("Please enter a value in the 'value' field, in the 'pandas.Series object' section.");
   } else {
@@ -29,6 +31,8 @@ const createFromObject = () => {
 const createFromList = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (value.value === "") {
     return alert("Please enter a value in the 'value' field, in the 'pandas.Series object' section.");
   } else {
@@ -41,6 +45,8 @@ const createFromSeries = () => {
     return alert("Please enter a new variable name in the 'array' field, in the 'pandas.Series object' section.");
   } else if (variable.value === '') {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else {
       document.editor.textbox.value+="\n" + array.value + " = pd.Series(" + variable.value + ", index=['', ''])";
   }
@@ -73,5 +79,13 @@ const copy = (arg) => {
       return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else {
      document.editor.textbox.value+= "\n" + array.value + " = np." + arg + "(" + variable.value + ")";
+  }
+}
+
+const seriesProperties = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "." + arg;
   }
 }
