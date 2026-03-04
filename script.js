@@ -45,3 +45,11 @@ const createFromSeries = () => {
       document.editor.textbox.value+="\n" + array.value + " = pd.Series(" + variable.value + ", index=['', ''])";
   }
 }
+
+const seriesProperties = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "." + arg;
+  }
+}
