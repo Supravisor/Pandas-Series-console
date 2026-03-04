@@ -25,9 +25,17 @@
 <p>
   <input type="button" class="btn btn-module" value="pandas" onclick="document.editor.textbox.value+='\nimport pandas as pd'" />
   <input type="button" class="btn btn-module" value="numpy" onclick="document.editor.textbox.value+='\nimport numpy as np'" />
-  <input type="button" class="btn btn-module" value="version" onclick="document.editor.textbox.value+='print(np.__version__)\n'" />
+  <input type="button" class="btn btn-module" value="version" onclick="document.editor.textbox.value+='\nprint(np.__version__)'" />
 </p>
 
+<hr />
+<h2>pandas.Series object</h2>
+
+<p>
+  <input type="button" class="btn btn-success" value="pd.Series" onclick="series();" />
+  <input class="btn" name="array" id="array" placeholder="array" size="10" type="textfield" />
+  <input class="btn" name="variable" id="variable" placeholder="variable name" size="10" type="textfield" />
+</p>
             </div>
           </td>
           <td id="textbox">
