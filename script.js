@@ -1,6 +1,7 @@
 
 // pandas.Series object
 let array = document.getElementById("array");
+let variable = document.getElementById("variable");
 
 const series = () => {
   if (array.value === '') {
@@ -8,7 +9,7 @@ const series = () => {
   } else if (variable.value === "") {
      document.editor.textbox.value+= "\nnp.array([" + array.value.replaceAll(",", ", ").split(",") + "])";
   } else if (Math.abs(Number(variable.value)) >= 0) {
-      return alert("Please do not enter a number in the 'variable' field.");
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else {
      document.editor.textbox.value+= "\n" + variable.value + " = pd.Series([" + array.value.replaceAll(",", ", ").split(",") + "])";
   }
