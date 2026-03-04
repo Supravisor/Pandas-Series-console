@@ -2,6 +2,7 @@
 // pandas.Series object
 let array = document.getElementById("array");
 let variable = document.getElementById("variable");
+let value = document.getElementById("value");
 
 const series = () => {
   if (array.value === '') {
