@@ -1,5 +1,7 @@
 
 // pandas.Series object
+let array = document.getElementById("array");
+
 const series = () => {
   if (array.value === '') {
       return alert("Please enter a comma separated array in the 'array' field, in the 'pandas.Series object' section.");
