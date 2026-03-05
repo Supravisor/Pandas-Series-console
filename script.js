@@ -52,14 +52,6 @@ const createFromSeries = () => {
   }
 }
 
-const seriesProperties = (arg) => {
-  if (variable.value === "") {
-    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
-  } else {
-      document.editor.textbox.value+="\n" + variable.value + "." + arg;
-  }
-}
-
 const nameSeries = (arg) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
@@ -85,7 +77,21 @@ const copy = (arg) => {
 const seriesProperties = (arg) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + "." + arg;
+  }
+}
+
+const access = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (index.value == "") {
+      return alert("Please enter a number in the 'index' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[" + index.value + "]";
   }
 }
