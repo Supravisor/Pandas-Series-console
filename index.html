@@ -36,6 +36,46 @@
   <input class="btn" name="array" id="array" placeholder="array" size="10" type="textfield" />
   <input class="btn" name="variable" id="variable" placeholder="variable name" size="10" type="textfield" />
 </p>
+
+<p>
+  <input type="button" class="btn btn-success" value="create from object" onclick="createFromObject();" />
+  <input type="button" class="btn btn-success" value="create from list" onclick="createFromList();" />
+  <input type="button" class="btn btn-success" value="create from series" onclick="createFromSeries();" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-success" value="index" onclick="seriesProperties(this.value);" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-success" value="name" onclick="nameSeries(this.value);" />
+  <input class="btn" name="value" id="value" placeholder="value" type="textfield" />
+  <input type="button" class="btn btn-success" value="copy" onclick="copy(this.value);" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-success" value="values" onclick="seriesProperties(this.value);" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-success" value="access" onclick="access();" />
+  <input class="btn" name="index" id="index" placeholder="index" type="number" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-success" value="range" onclick="range()" />
+</p>
+
+<p>
+  <input class="btn" name="start" id="start" placeholder="start" type="number" />
+  <input class="btn" name="end" id="end" placeholder="end" type="number" />
+  <input class="btn" name="step" id="step" placeholder="step" type="number" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-success" value="sort" onclick="statistics(this.value)" />
+</p>
+
             </div>
           </td>
           <td id="textbox">
