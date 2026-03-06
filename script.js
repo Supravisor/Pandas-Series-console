@@ -112,6 +112,17 @@ const range = () => {
   }
 }
 
+// Array Type
+const dtype = (type) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (!type) {
+      document.editor.textbox.value+= "\n" + variable.value + ".dtype";
+  } else {
+      document.editor.textbox.value+= "\npd.Series(" + variable.value + ", dtype=np." + type + ")";
+  }
+}
+
 // summary statistics
 const statistics = (arg) => {
   if (variable.value === '') {
