@@ -164,6 +164,8 @@ const statistics = (arg) => {
 }
 
 // Assigning
+let assignRangeStart = document.getElementById("assignRangeStart");
+
 const assignRangeSeries = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
