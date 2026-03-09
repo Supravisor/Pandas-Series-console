@@ -165,6 +165,7 @@ const statistics = (arg) => {
 
 // Assigning
 let assignRangeStart = document.getElementById("assignRangeStart");
+let assignRangeEnd = document.getElementById("assignRangeEnd");
 
 const assignRangeSeries = () => {
   if (variable.value === "") {
