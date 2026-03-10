@@ -182,3 +182,47 @@ const assignRangeSeries = () => {
       document.editor.textbox.value+= "\n" + variable.value + "[" + assignRangeStart.value + ":" + assignRangeEnd.value + "] = " + assignValue.value;
   }
 }
+
+// Indexing
+let indexSeries = document.getElementById("indexSeries");
+let ilocIndexStart = document.getElementById("ilocIndexStart");
+let ilocIndexEnd = document.getElementById("ilocIndexEnd");
+let indexAssign = document.getElementById("indexAssign");
+
+const accessSeries = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (indexSeries.value === "") {
+      return alert("Please enter an element name in the 'index' field, in the 'Indexing' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "['" + indexSeries.value + "']";
+  }
+}
+
+const accessIloc = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (ilocIndexStart.value === "") {
+      return alert("Please enter a number in the 'index start' field, in the 'Indexing' section.");
+  } else {
+      if (ilocIndexEnd.value !== "") {
+        document.editor.textbox.value+= "\n" + variable.value + "." + arg + "[[" + ilocIndexStart.value + ", " + ilocIndexEnd.value + "]]";
+      } else {
+          document.editor.textbox.value+= "\n" + variable.value + "." + arg + "[" + ilocIndexStart.value + "]";
+      }
+  }
+}
+
+const assignIndex = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (indexAssign.value === "") {
+      return alert("Please enter a comma separated array in the 'new index' field, in the 'Indexing' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + ".index = ['" + indexAssign.value.replaceAll(/\s*,\s*/g, "', '").split(",") + "']";
+  }
+}
