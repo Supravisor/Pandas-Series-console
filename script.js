@@ -246,3 +246,17 @@ const sliceRange = () => {
       document.editor.textbox.value+= "\n" + variable.value + "['" + indexSeriesRangeOne.value + "': '" + indexSeriesRangeTwo.value + "']";
   }
 }
+
+const rangeMatrix = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (matrixStart.value === "") {
+    return alert("Please enter a name in the 'start' field, in the 'Slicing' section.");
+  } else if (matrixEnd.value === "") {
+    return alert("Please enter a name in the 'end' field, in the 'Slicing' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[" + startMatrix.value + ":" + endMatrix.value + "]";
+  }
+}
