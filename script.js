@@ -232,6 +232,7 @@ const assignIndex = () => {
 // Slicing
 let indexSeriesRangeOne = document.getElementById("indexSeriesRangeOne");
 let indexSeriesRangeTwo = document.getElementById("indexSeriesRangeTwo");
+let startMatrix = document.getElementById("startMatrix");
 
 const sliceRange = () => {
   if (variable.value === "") {
