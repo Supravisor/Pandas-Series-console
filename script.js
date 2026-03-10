@@ -193,7 +193,7 @@ const accessSeries = () => {
   } else if (Math.abs(Number(variable.value)) >= 0) {
       return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (indexSeries.value === "") {
-      return alert("Please enter an element name or index in the 'index' field, in the 'Indexing' section.")
+      return alert("Please enter an element name or index in the 'index' field, in the 'Indexing' section.");
   } else {
     let index = indexSeries.value.replaceAll(",", "', '");
     let recover = indexSeries.value;
@@ -214,5 +214,21 @@ const accessSeries = () => {
 
       indexSeries.value = recover;
     }
+  }
+}
+
+const assignRangeSeries = () => {
+  if (variable.value === '') {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (assignRangeStart.value === "") {
+      return alert("Please enter a number in the 'start' field, in the 'Indexing' section.");
+  } else if (assignRangeEnd.value === "") {
+      return alert("Please enter a number in the 'end' field, in the 'Indexing' section.");
+  } else if (assignValue.value === "") {
+      return alert("Please enter a number in the 'value' field, in the 'Indexing' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[" + assignRangeStart.value + ":" + assignRangeEnd.value + "] = " + assignValue.value;
   }
 }
