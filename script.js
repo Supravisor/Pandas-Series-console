@@ -187,6 +187,7 @@ const assignRangeSeries = () => {
 let indexSeries = document.getElementById("indexSeries");
 let ilocIndexStart = document.getElementById("ilocIndexStart");
 let assignRangeStart = document.getElementById("assignRangeStart");
+let assignRangeEnd = document.getElementById("assignRangeEnd");
 
 const accessSeries = () => {
   if (variable.value === "") {
