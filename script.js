@@ -195,32 +195,14 @@ const accessSeries = () => {
   } else if (Math.abs(Number(variable.value)) >= 0) {
       return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (indexSeries.value === "") {
-      return alert("Please enter an element name or index in the 'index' field, in the 'Indexing' section.");
+      return alert("Please enter an element name in the 'index' field, in the 'Indexing' section.");
   } else {
-    let index = indexSeries.value.replaceAll(",", "', '");
-    let recover = indexSeries.value;
-
-    if (index.split("").includes(",")) {
-      document.editor.textbox.value+= "\n" + variable.value + "[['" + index + "']]";
-    } else if (Math.abs(Number(recover)) >= 0) {
-        indexSeries.value = Number(recover);
-        document.editor.textbox.value+= "\n" + variable.value + "[" + indexSeries.value + "]";
-    } else {
-        indexSeries.value = `'${indexSeries.value}'`;
-
-      if (indexAssign.value === "") {
-        document.editor.textbox.value+= "\n" + variable.value + "[" + indexSeries.value + "]";
-      } else {
-          document.editor.textbox.value+= "\n" + variable.value + "[[" + indexSeries.value + ", '" + indexAssign.value + "']]";
-      }
-
-      indexSeries.value = recover;
-    }
+      document.editor.textbox.value+= "\n" + variable.value + "['" + indexSeries.value + "']";
   }
 }
 
 const accessIloc = (arg) => {
-  if (variable.value === '') {
+  if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (Math.abs(Number(variable.value)) >= 0) {
       return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
@@ -241,6 +223,6 @@ const assignIndex = () => {
   } else if (indexAssign.value === "") {
       return alert("Please enter a comma separated array in the 'new index' field, in the 'Indexing' section.");
   } else {
-      document.editor.textbox.value+= "\n" + variable.value + ".index = ['" + indexAssign.value.replaceAll(",", "', '").split(",") + "']";
+      document.editor.textbox.value+= "\n" + variable.value + ".index = ['" + indexAssign.value.replaceAll(/\s*,\s*/, "', '").split(",") + "']";
   }
 }
