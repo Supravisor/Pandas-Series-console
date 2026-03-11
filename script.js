@@ -220,9 +220,82 @@ const accessIloc = (arg) => {
 const assignIndex = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (indexAssign.value === "") {
       return alert("Please enter a comma separated array in the 'new index' field, in the 'Indexing' section.");
   } else {
       document.editor.textbox.value+= "\n" + variable.value + ".index = ['" + indexAssign.value.replaceAll(/\s*,\s*/g, "', '").split(",") + "']";
+  }
+}
+
+// Slicing
+let indexSeriesRangeOne = document.getElementById("indexSeriesRangeOne");
+let indexSeriesRangeTwo = document.getElementById("indexSeriesRangeTwo");
+let startMatrix = document.getElementById("startMatrix");
+let endMatrix = document.getElementById("endMatrix");
+let beforeMatrix = document.getElementById("beforeMatrix");
+
+const sliceRange = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (indexSeriesRangeOne.value === "") {
+      return alert("Please enter an element name in the 'range one' field, in the 'Slicing' section.");
+  } else if (indexSeriesRangeTwo.value === "") {
+      return alert("Please enter an element name in the 'range two' field, in the 'Slicing' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "['" + indexSeriesRangeOne.value + "': '" + indexSeriesRangeTwo.value + "']";
+  }
+}
+
+const rangeMatrix = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (startMatrix.value === "") {
+    return alert("Please enter a number in the 'start' field, in the 'Slicing' section.");
+  } else if (endMatrix.value === "") {
+    return alert("Please enter a number in the 'end' field, in the 'Slicing' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[" + startMatrix.value + ":" + endMatrix.value + "]";
+  }
+}
+
+const sliceMatrix = () => {
+  if (variable.value === '') {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (startMatrix.value === "" && endMatrix.value) {
+      if (endMatrix.value && beforeMatrix.value) {
+        document.editor.textbox.value+= "\n" + variable.value + "[" + endMatrix.value + ":, " + beforeMatrix.value + ":]";
+      } else {
+          document.editor.textbox.value+= "\n" + variable.value + "[" + endMatrix.value + ":, " + beforeMatrix.value + ":]";
+      }
+  } else if (startMatrix.value && endMatrix.value) {
+      document.editor.textbox.value+= "\n" + variable.value + "[:" + startMatrix.value + ", :" + endMatrix.value + "]";
+  }
+}
+
+const rangeMatrixReverse = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[::-1]";
+  }
+}
+
+const rangeMatrixOdd = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[::2]";
   }
 }
