@@ -68,7 +68,7 @@ input[type="number"] {
   width: 80px;
 }
 
-.btn-primary, .btn-success {
+.btn-data, .btn-primary, .btn-success {
   color: white;
 }
 
