@@ -256,9 +256,9 @@ const rangeMatrix = () => {
   } else if (Math.abs(Number(variable.value)) >= 0) {
       return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
   } else if (startMatrix.value === "") {
-    return alert("Please enter a name in the 'start' field, in the 'Slicing' section.");
+    return alert("Please enter a number in the 'start' field, in the 'Slicing' section.");
   } else if (endMatrix.value === "") {
-    return alert("Please enter a name in the 'end' field, in the 'Slicing' section.");
+    return alert("Please enter a number in the 'end' field, in the 'Slicing' section.");
   } else {
       document.editor.textbox.value+= "\n" + variable.value + "[" + startMatrix.value + ":" + endMatrix.value + "]";
   }
@@ -277,5 +277,15 @@ const sliceMatrix = () => {
       }
   } else if (startMatrix.value && endMatrix.value) {
       document.editor.textbox.value+= "\n" + variable.value + "[:" + startMatrix.value + ", :" + endMatrix.value + "]";
+  }
+}
+
+const rangeMatrixReverse = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (Math.abs(Number(variable.value)) >= 0) {
+      return alert("Please do not enter a number in the 'variable' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+= "\n" + variable.value + "[::-1]";
   }
 }
