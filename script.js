@@ -234,6 +234,7 @@ let indexSeriesRangeOne = document.getElementById("indexSeriesRangeOne");
 let indexSeriesRangeTwo = document.getElementById("indexSeriesRangeTwo");
 let startMatrix = document.getElementById("startMatrix");
 let endMatrix = document.getElementById("endMatrix");
+let beforeMatrix = document.getElementById("beforeMatrix");
 
 const sliceRange = () => {
   if (variable.value === "") {
