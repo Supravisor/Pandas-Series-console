@@ -152,17 +152,6 @@ const assignSeries = () => {
   }
 }
 
-// summary statistics
-const statistics = (arg) => {
-  if (variable.value === '') {
-    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
-  } else if (!axis.value) {
-      document.editor.textbox.value+="\n" + variable.value + "." + arg + "()";
-  } else {
-      document.editor.textbox.value+="\n" + variable.value + "." + arg + "(axis=" + axis.value + ")";
-  }
-}
-
 // Assigning
 let assignRangeStart = document.getElementById("assignRangeStart");
 let assignRangeEnd = document.getElementById("assignRangeEnd");
