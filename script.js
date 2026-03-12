@@ -299,6 +299,8 @@ const sort = (arg) => {
 }
 
 // Summary statistics
+let axis = document.getElementById("axis");
+
 const log = (arg) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
