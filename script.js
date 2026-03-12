@@ -318,3 +318,15 @@ const statistics = (arg) => {
       document.editor.textbox.value+="\n" + variable.value + "." + arg + "(axis=" + axis.value + ")";
   }
 }
+
+// Broadcasting and vectorised operations
+let broadcastNumber = document.getElementById("broadcastNumber");
+const operation = (arg) => {
+  if (variable.value === '') {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (broadcastNumber.value === "") {
+      return alert("Please enter a number in the 'value' field below, in the 'Broadcasting and vectorised operations' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + " " + arg + " " + broadcastNumber.value;
+  }
+}
