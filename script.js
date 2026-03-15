@@ -333,6 +333,7 @@ const operation = (arg) => {
 
 // Boolean series (masks)
 let valueA = document.getElementById("valueA");
+let valueB = document.getElementById("valueB");
 
 const boolean = (arg) => {
   if (variable.value === "") {
