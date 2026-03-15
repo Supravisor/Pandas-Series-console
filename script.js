@@ -330,3 +330,17 @@ const operation = (arg) => {
       document.editor.textbox.value+="\n" + variable.value + " " + arg + " " + broadcastNumber.value;
   }
 }
+
+// Boolean series (masks)
+const boolean = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (valueB.value === "") {
+      return alert("Please enter a value in the 'value B' field, in the 'Boolean series (masks)' section.");
+  } else {
+      if (valueA.value === "") {
+        valueA.value = variable.value;
+      }
+      document.editor.textbox.value+="\n" + valueA.value + "[" + valueA.value + " " + arg + " " + valueB.value + "]";
+  }
+}
