@@ -330,3 +330,40 @@ const operation = (arg) => {
       document.editor.textbox.value+="\n" + variable.value + " " + arg + " " + broadcastNumber.value;
   }
 }
+
+// Boolean series (masks)
+let valueA = document.getElementById("valueA");
+let valueB = document.getElementById("valueB");
+
+const boolean = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (valueB.value === "") {
+      return alert("Please enter a value in the 'value B' field, in the 'Boolean series (masks)' section.");
+  } else {
+      if (valueA.value === "") {
+        valueA.value = variable.value;
+      }
+      document.editor.textbox.value+="\n" + valueA.value + "[" + valueA.value + " " + arg + " " + valueB.value + "]";
+  }
+}
+
+const masks = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (valueA.value === '') {
+    return alert("Please enter a value in the 'condition A' field, in the 'Boolean series (masks)' section.");
+  } else if (valueB.value === '') {
+      return alert("Please enter a value in the 'condition B' field, in the 'Boolean series (masks)' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "[(" + valueA.value + ") " + arg + " (" + valueB.value + ")]";
+  }
+}
+
+const truthy = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "[" + arg;
+  }
+}
