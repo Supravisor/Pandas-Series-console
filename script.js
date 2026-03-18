@@ -370,6 +370,7 @@ const truthy = (arg) => {
 
 // Modifying series
 let modifyElement = document.getElementById("modifyElement");
+let modifyValue = document.getElementById("modifyValue");
 
 const modifySeries = () => {
   if (variable.value === "") {
@@ -391,9 +392,9 @@ const modifySeries = () => {
 const modifyBoolean = (arg) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
-  } else if (modifyIndex.value === '') {
+  } else if (modifyIndex.value === "") {
       return alert("Please enter a number to compare in the 'index' field, in the 'Modifying series' section.");
-  } else if (modifyValue.value === '') {
+  } else if (modifyValue.value === "") {
       return alert("Please enter a new value in the 'value' field, in the 'Modifying series' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + "[" + variable.value + " " + arg + " " + modifyIndex.value + "] = " + modifyValue.value;
