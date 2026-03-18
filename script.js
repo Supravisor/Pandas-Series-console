@@ -369,6 +369,8 @@ const truthy = (arg) => {
 }
 
 // Modifying series
+let modifyElement = document.getElementById("modifyElement");
+
 const modifySeries = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
