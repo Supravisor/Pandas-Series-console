@@ -371,6 +371,7 @@ const truthy = (arg) => {
 // Modifying series
 let modifyElement = document.getElementById("modifyElement");
 let modifyValue = document.getElementById("modifyValue");
+let modifyIndex = document.getElementById("modifyIndex");
 
 const modifySeries = () => {
   if (variable.value === "") {
