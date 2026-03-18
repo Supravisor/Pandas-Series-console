@@ -224,6 +224,28 @@
   <input type="button" class="btn btn-primary" value="last False" onclick="document.editor.textbox.value+=', False]\n'" />
 </p>
 
+<hr />
+<h2>Modifying series</h2>
+
+<p>
+  <input type="button" class="btn btn-primary" value="modify" onclick="modifySeries();" />
+  <input class="btn" name="modifyElement" id="modifyElement" placeholder="element" size="10" type="textfield" />
+  <input class="btn" name="modifyValue" id="modifyValue" placeholder="value" type="number" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value=">" onclick="modifyBoolean(this.value);" />
+  <input type="button" class="btn btn-primary" value=">=" onclick="modifyBoolean(this.value);" />
+  <input type="button" class="btn btn-primary" value="<" onclick="modifyBoolean(this.value);" />
+  <input type="button" class="btn btn-primary" value="<=" onclick="modifyBoolean(this.value);" />
+  <input type="button" class="btn btn-primary" value="==" onclick="modifyBoolean(this.value);" />
+  <input type="button" class="btn btn-primary" value="!=" onclick="modifyBoolean(this.value);" />
+</p>
+
+<p>
+  <input class="btn" name="modifyIndex" id="modifyIndex" placeholder="index" size="10" type="number" />
+</p>
+
 </div>
           </td>
           <td id="textbox">

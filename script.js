@@ -367,3 +367,37 @@ const truthy = (arg) => {
       document.editor.textbox.value+="\n" + variable.value + "[" + arg;
   }
 }
+
+// Modifying series
+let modifyElement = document.getElementById("modifyElement");
+let modifyValue = document.getElementById("modifyValue");
+let modifyIndex = document.getElementById("modifyIndex");
+
+const modifySeries = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (modifyElement.value === '') {
+      return alert("Please enter an element name or index in the 'element' field, in the 'Modifying series' section.");
+  } else if (modifyValue.value === '') {
+      return alert("Please enter a number in the 'value' field.");
+  } else {
+      if (Math.abs(Number(modifyElement.value)) >= 0) {
+        modifyElement.value = Number(modifyElement.value);
+        document.editor.textbox.value+="\n" + variable.value + "[" + modifyElement.value + "] = " + modifyValue.value;
+      } else {
+          document.editor.textbox.value+="\n" + variable.value + "['" + modifyElement.value + "'] = " + modifyValue.value;
+      }
+  }
+}
+
+const modifyBoolean = (arg) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'pandas.Series object' section.");
+  } else if (modifyIndex.value === "") {
+      return alert("Please enter a number to compare in the 'index' field, in the 'Modifying series' section.");
+  } else if (modifyValue.value === "") {
+      return alert("Please enter a new value in the 'value' field, in the 'Modifying series' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "[" + variable.value + " " + arg + " " + modifyIndex.value + "] = " + modifyValue.value;
+  }
+}
